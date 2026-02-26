@@ -6,14 +6,12 @@ plugins {
 
 android {
     namespace = "com.example.ethelutilityapp"
-    compileSdk {
-        version = release(36)
-    }
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.ethelutilityapp"
         minSdk = 26
-        targetSdk = 36
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -57,10 +55,16 @@ dependencies {
     androidTestImplementation(libs.androidx.compose.ui.test.junit4)
     debugImplementation(libs.androidx.compose.ui.tooling)
     debugImplementation(libs.androidx.compose.ui.test.manifest)
-    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0")
-    implementation ("androidx.lifecycle:lifecycle-runtime-compose:2.10.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.10.0")
-    implementation ("com.squareup.retrofit2:retrofit:3.0.0") //2.11.0
-    implementation ("com.squareup.retrofit2:converter-scalars:3.0.0") //2.11.0
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.10.2") //1.8.1
+
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.8.7")
+    
+    implementation("com.squareup.retrofit2:retrofit:2.11.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0")
+    implementation("com.squareup.retrofit2:converter-scalars:2.11.0")
+    
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.9.0")
+    
+    // DataStore for Settings
+    implementation("androidx.datastore:datastore-preferences:1.1.2")
 }
